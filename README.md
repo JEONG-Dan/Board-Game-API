@@ -1,30 +1,33 @@
-# Board Game API
+# Projet API Board Games
+Dan JEONG
 
-## Objectifs de ce projet
+## Table des matières
 
-Vous devez implémenter une API Restful permettant de réaliser des opérations basiques ( Create , Read, Update, Delete) sur des objets "Jeu de Société" stockés au sein d'une base de données MariaDB. 
+* [Mise en place](#mise-en-place)
+    * [Clonez le repo](#clonez-le-repo)
+    * [Créez un fichier](#créer-un-fichier)
+    * [Lancez le projet](#lancez-le-projet)
 
-Votre api doit répondre aux URI suivantes : 
+## Mise en place
+Afin de pouvoir tester le projet, il faut (obviously) commencer par l'installer.
 
-| Verbe HTTP    | URI |  Attendu | Bonus     | Status Possibles  |
-|--------|-------------|-----------------------------------|------------------------------------------------------------|---|
-| GET    | /games      | Liste de tous les jeux de société, ordonnées par défaut dans l'ordre alphabétique| Bonus : accepter les query parameters offset et limit      | 200, 401  |
-| GET    | /games/[id] | Afficher un jeu de société        |                                                            | 200,401,404  |
-| POST | /games      | Ajout d'un jeu de société         |                   | 201, 400, 401  |
-| PUT    | /games/[id] | Mise à jour d'un jeu de société   |                                                            | 200, 400, 401 ,404 |
-| DELETE | /games/[id]| Supprimer un jeu de société       | | 204,401,404  |
+### Clonez le repo :
+Pour se faire, commencez par cloner le repository avec les commandes suivantes :
+  ```bash
+  git clone https://github.com/JEONG-Dan/Board-Game-API/
+  cd Board-Game-API
+  ```
 
-## Authentification
-Afin de pouvoir consommer votre API, votre application nécessitera une authentification via token JWT. 
+### Créez un fichier
+Ensuite il faut créer un fichier `secret_data.env` à la racine du projet contenant :
+```
+JWT_KEY="SECRET" # Ici, vous pouvez remplacer "SECRET" par le texte que vous voulez
 
-Un seul compte utilisateur existera, celui de `marcel` ayant pour mot de passe `azerty`.
+```
 
-## Contraintes applicatives
-
-Etant donné qu'il s'agit d'un simple exercice lié à une API, il vous est demandé de ne générer qu'un seul modèle.
-Néanmoins, votre script doit vérifier la qualités des données reçues lors d'une création ou mise à jour. 
-
-
-### Resources fournies
-Vous disposez, au sein du dossier `data` d'une liste de 20 000 jeux de société, stockés au sein d'un fichier CSV. 
-Ces données sont à importer au sein d'une base de données. 
+### Lancez le projet
+Maintenant que tout est configuré, vous pouvez lancer le projet en entrant sur un terminal la commande suivante :
+```bash
+npm run start:dev
+```
+Ici, le `:dev` est optionnel, et pas nécessaire pour juste tester le projet, mais pratique pour apporter une modification.
