@@ -14,8 +14,9 @@ export class GamesController {
        return this.gamesService.findOne(id);
     }
 
-    @Post(':games')
-    create(){
+    @Post(':name')
+    create(@Param('name') name: string): string {
+        this.gamesService.addGame(name);
         return 'ajout de jeu';
     }
 
