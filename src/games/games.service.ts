@@ -15,7 +15,7 @@ export class GamesService {
     }
 
     findOne(id: String): String {
-        return this.games.find(games => games.name === id);
+        return this.games.find(games => games.id === Number(id));
     }
 
 
