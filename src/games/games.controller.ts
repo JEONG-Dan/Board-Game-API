@@ -5,7 +5,7 @@ import {GamesService} from './games.service';
 export class GamesController {
     constructor(private readonly gamesService: GamesService) {}
     @Get()
-  getAllGames() {
+    getAllGames() {
        return this.gamesService.findAll();
     }
 
@@ -15,16 +15,17 @@ export class GamesController {
     }
 
     @Post(':games')
-    create(@Param('name') name : string): string {
-    this.gamesService.addBoardgame(name);
-    return 'This action adds a new cat';
-  }
+    create(){
+        return 'ajout de jeu';
+    }
 
     @Put(':id')
-    updateGames(@Param('id') id: string, @Body() updateBoardgameDto: any) {
+    updateGames() {
+        return 'mise a jour d\'un jeu';
     }
 
     @Delete(' :id ')
-    deleteGames(@Param('id') id: string) {
+    deleteGames() {
+        return 'suppression d\'un jeu';
     }
 }

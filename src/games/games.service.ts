@@ -6,7 +6,6 @@ export class GamesService {
     games;
     constructor() {
         this.games = bgg;
-        console.log("coucou from boardgame service");
         console.log(this.games[0]);
 
     }
@@ -18,9 +17,4 @@ export class GamesService {
         return this.games.find(games => games.id === Number(id));
     }
 
-
-    addBoardgame(games) {
-        this.games.push(games);
-        return games;
-    }
 }
